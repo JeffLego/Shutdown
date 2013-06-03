@@ -20,6 +20,15 @@ Public Class MainForm
         If e.KeyCode = Keys.Left Then
             e.SuppressKeyPress = True
         End If
+        If e.KeyCode = Keys.Right Then
+            e.SuppressKeyPress = True
+        End If
+        If e.KeyCode = Keys.Down Then
+            e.SuppressKeyPress = True
+        End If
+        If e.KeyCode = Keys.Up Then
+            e.SuppressKeyPress = True
+        End If
         If e.KeyCode = Keys.PageUp Then
             e.SuppressKeyPress = True
         End If
