@@ -10,31 +10,13 @@ Public Class MainForm
         txtSeconds.SelectionStart = 2
     End Sub
     Private Sub OnTyping(sender As Object, e As KeyEventArgs) Handles txtSeconds.KeyDown
-        If e.KeyCode = Keys.Back Then
-            e.SuppressKeyPress = True
-            Shift_Backward()
-        End If
-        If e.KeyCode = Keys.Delete Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.Left Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.Right Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.Down Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.Up Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.PageUp Then
-            e.SuppressKeyPress = True
-        End If
-        If e.KeyCode = Keys.Home Then
-            e.SuppressKeyPress = True
-        End If
+        select case e.keycode
+            case is keys.back
+                e.supresskeypress = true
+                shift_backward()
+            case is = keys.delete, keys.left, keys.right, keys.down, keys.up, keys.pageup, keys.home
+                e.supresskeypress = true
+        end select
     End Sub
     Private Sub AfterTyping() Handles txtSeconds.KeyUp
         Try
